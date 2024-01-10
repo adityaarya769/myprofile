@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaditya Arya - Chatbot Engineer</title>
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+  <df-messenger
+      project-id="scrapi-development"
+      agent-id="4f45ddf0-ccc3-4e1a-bc4b-733a22c79c1d"
+      language-code="en-us">
+      <df-messenger-chat-bubble
+        chat-title="myProfile">
+      </df-messenger-chat-bubble>
+  </df-messenger>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    df-messenger {
+        z-index: 999;
+        position: fixed;
+        bottom: 16px;
+       right: 16px;
+    }
+
+    .skills {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+
+    img {
+      width: 200px;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+
+    .summary {
+      flex: 1 1 100%;
+      margin-bottom: 20px;
+    }
+
+    .contact-details {
+      flex: 1 1 calc(20% - 50px);
+      margin-left: 5px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    .certifications {
+      
+      margin-bottom: 20px;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .blue-underline {
+        color: #0066cc;
+        text-decoration: underline;
+      }
+
+    .bold {
+        font-weight: bold;
+      }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Aaditya Arya</h1>
+  </header>
+
+  <div class="container">
+    <div class="contact-details">
+        <h2>Contact Details</h2>
+        <p><strong>Email Id:</strong><a href="mailto:im.aadityaarya@gmail.com"> im.aadityaarya@gmail.com</a></p>
+        <p><strong>Contact Number:</strong> 7692041073</p>
+        <p><strong>LinkedIn:</strong><a href="https://www.linkedin.com/in/imaadityaarya" target="_blank"> https://www.linkedin.com/in/imaadityaarya</a></p>
+        <p><strong>Resume:</strong><a href="AdityaAryaResume.pdf" download> Download Resume</a></p>
+    </div>
+    <img src="AdityaAryaImage.jpg" alt="Aaditya Arya">
+    <div class="summary">
+        <h2>Summary</h2>
+        <p>I am a chatbot engineer, who has experience in designing and developing a chatbot using Dialogflow CX and Dialogflow ES, and using nodejs to manipulate it's function in backend. I have experience developing the chatbot for both chat and telephony flows. I have also worked in integrating the chatbot with slack workspace, creating threads, automating app, to respond to the user using responses coming from chatbot.</p>
+        <p>I also identify as python developer, who can debug, manipulate, extract relevant information from various platforms like Dialogflow CX or Dialogflow ES. I have also have experience in manipulating data from excell file and convert it into a system excell file which are easy to understand.</p>
+        <p>I also have experience in giving workshops to the client, and helping them understand the various components of Dialogflow CX and also train them, so that they can build there own chatbots in future. I also helped in resolving any queries they having regarding Dialogflow</p>
+    </div>
+    
+    <div class="certifications">
+        <h2>Certifications</h2>
+        <h4><a href="https://www.credential.net/7b5c2848-0bf1-4f07-ae40-6df09d4616fb?key=6f9f5d7d32c3917b006071c970304b8bb8bfd69056f30f9e6225623357a5c9dd">Google Cloud Certified Associate Cloud Engineer</a></h4>
+        <p>An Associate Cloud Engineer deploys applications, monitors operations, and manages enterprise solutions. This individual is able to use Google Cloud Console and the command-line interface to perform common platform-based tasks to maintain one or more deployed solutions that leverage Google-managed or self-managed services on Google Cloud.</p>
+        <p>The Associate Cloud Engineer exam assesses your ability to:</p>
+        <ul>
+              <li>Set up a cloud solution environment</li>
+              <li>Plan and configure a cloud solution</li>
+              <li>Deploy and implement a cloud solution</li>
+              <li>Ensure successful operation of a cloud solution</li>
+              <li>Configure access and security</li>
+          </ul>
+        <p><span class="bold">Certification Link:</span><a href="https://www.credential.net/7b5c2848-0bf1-4f07-ae40-6df09d4616fb?key=6f9f5d7d32c3917b006071c970304b8bb8bfd69056f30f9e6225623357a5c9dd" target="_blank"> Click here</a></p>
+    </div>
+
+    <div class="skills">
+        <h2>Skills</h2>
+        <p><strong>Subjects:</strong> Data Structures, Database Management System, Algorithm Design and Analysis</p>
+        <p><strong>Concepts:</strong> Object-Oriented Programming, Low- and High-Level System Design, Google CCAI</p>
+        <p><strong>Programming Languages:</strong> Python, JavaScript, C++, HTML, CSS, TypeScript</p>
+        <p><strong>Frameworks:</strong> Django, NodeJS, ReactJS</p>
+        <p><strong>Databases:</strong> MySQL, Firebase, Oracle SQL, Redis</p>
+        <p><strong>Tools:</strong> Postman, Dialogflow ES or CX, Diagrams.net</p>
+        <p><strong>Version Control:</strong> GIT, GitHub, GitLab</p>
+        <p><strong>Operating System:</strong> Windows, Unix</p>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2024 Aaditya Arya
+  </footer>
+
+</body>
+
+</html>
