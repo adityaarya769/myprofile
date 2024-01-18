@@ -1,126 +1,220 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
-    <df-messenger
-      project-id="scrapi-development"
-      agent-id="4f45ddf0-ccc3-4e1a-bc4b-733a22c79c1d"
-      language-code="en-us">
-      <df-messenger-chat-bubble
-        chat-title="myProfile">
-      </df-messenger-chat-bubble>
-    </df-messenger>
-    <style>
-      df-messenger {
-        z-index: 999;
-        position: fixed;
-        bottom: 16px;
-      right: 16px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Arya - Chatbot Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css"> -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+        background-color: #32475b;
+        color: #fff;
+        text-align: center;
+        padding: 0.8em 0;
+        animation: fadeIn 2s;
+    }
+
+    footer {
+        background-color: #32475b;
+        color: #fff;
+        text-align: center;
+        padding: 1em 0;
+        position: fixed; /* Make the footer fixed */
+        bottom: 0;
+        width: 100%;
+        z-index: 998; /* Ensure the footer is below the chat icon */
       }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/Index.html">Aditya Arya</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="/Resume.html">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Skills.html">Skills</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="/WorkExperience.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Work Experience
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/WorkExperience.html?#">Chatbot Engineer at Quantiphi Analytics Solutions</a></li>
-                <li><a class="dropdown-item" href="/WorkExperience.html?#">Chatbot Engineer Intern at Quantiphi Analytics Solutions</a></li>
-                <li><a class="dropdown-item" href="/WorkExperience.html?#">Programmer Analyst at Cognizant Technology Solution</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="/ShootingGame.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Project
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/ShootingGame.html">Shooting game</a></li>
-                <li><a class="dropdown-item" href="/CrimeRateDetection.html">Crime Rate Detection and Prediction</a></li>
-                <li><a class="dropdown-item" href="/ExtractDataDialogflow.html">Script to Extract data from Dialogflow CX</a></li>
-                <li><a class="dropdown-item" href="/ChatbotIntegratedWithwebsite.html">Chatbot Integrated with this website</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/FAQ.html">FAQ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Chatbot.html">Chatbot</a>
-            </li>
-          </ul>
-          
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-  </nav>
-    <div class="add photo">
-        <img src="AdityaAryaImage.jpg" alt="Girl in a jacket" width="350" height="400">
+    
+      df-messenger {
+        --df-messenger-bot-message: #f0f2f5; /* Background color for bot messages */
+        --df-messenger-button-titlebar-color: #1e2a47; /* Title bar color */
+        --df-messenger-chat-background-color: #fff; /* Chat background color */
+        --df-messenger-font-color: #32475b; /* General font color */
+        --df-messenger-send-icon: #1e2a47; /* Send button icon color */
+        --df-messenger-user-message: #1e2a47; /* Background color for user messages */
+        z-index: 1500;
+        position: fixed;
+        bottom: 60px; /* Position above the footer */
+        right: 16px;
+      }
+    
+      df-messenger-chat-bubble {
+        --df-messenger-button-titlebar-color: #1e2a47; /* Title bar color for chat bubble */
+        --df-messenger-chat-background-color: #f0f2f5; /* Chat bubble background color */
+      }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .profile-image {
+        display: block;
+        margin: -60px auto 10px;
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+        object-fit: cover;
+        border: 6px solid #ffffff; /* White border for contrast */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-image:hover {
+        transform: scale(1.1); /* Slightly larger scale on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for a lifting effect */
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #32475b;
+      margin: 0.8em 0;
+    }
+
+    header h1 {
+        margin: 0.3em 0; /* Reduced margin */
+        font-size: 4.0em; /* Adjusted font size */
+      }
+  
+    header p {
+        margin: 0.2em 0; /* Reduced margin */
+        font-size: 1.8em; /* Adjusted font size */
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    a:hover {
+      color: #ff6600;
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: '▹ ';
+      color: #ff6600;
+      font-weight: bold;
+    }
+
+    .skills ul {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+    }
+
+    footer {
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: auto;
+        margin: 20px;
+      }
+
+      .skills ul {
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Aditya Arya</h1>
+    <p>Chatbot Engineer & Software Developer</p>
+  </header>
+
+  <div class="container">
+    <img src="AdityaAryaImage.jpg" alt="Aditya Arya" class="profile-image">
+
+    <div class="contact-details section">
+      <h2>Contact Details</h2>
+      <p>Email: <a href="mailto:im.aadityaarya@gmail.com">im.aadityaarya@gmail.com</a></p>
+      <p>Phone: 7692041073</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/imaadityaarya" target="_blank">imaadityaarya</a></p>
+      <p>Resume: <a href="AdityaAryaResume.pdf" download>Download Resume</a></p>
     </div>
-    <div class="summary">
-        <div class="summary heading">
-            <h1>Summary</h1>
-        </div>
-        <div class="summary para1">
-            <p>I am a chatbot engineer, who has experience in designing and developing a chatbot using Dialogflow CX and Dialogflow ES, and using nodejs to manipulate it's function in backend. I have experience developing the chatbot for both chat and telephony flows. I have also worked in integrating the chatbot with slack workspace, creating threads, automating app, to respond to the user using responses coming from chatbot.</p>
-        </div>
-        <div class="summary para2">
-            <p>I also identify as python developer, who can debug, manipulate, extract relevant information from various platforms like Dialogflow CX or Dialogflow ES. I have also have experience in manipulating data from excell file and convert it into a system excell file which are easy to understand.</p>
-        </div>
-        <div class="summary para3">
-            <p>I also have experience in giving workshops to the client, and helping them understand the various components of Dialogflow CX and also train them, so that they can build there own chatbots in future. I also helped in resolving any queries they having regarding Dialogflow.</p>
-        </div>
+
+    <div class="summary section">
+      <h2>Summary</h2>
+      <p>Chatbot engineer with expertise in Dialogflow CX/ES, Node.js, and Python. Skilled in developing chat and telephony flows, integrating chatbots with various platforms, and conducting workshops on Dialogflow.</p>
     </div>
-    <br>
-    <div class="Contact Details">
-        <div class="Contact Heading"><h1>Contact Details</h1></div>
-        <div class="Contact Paragraph">
-            <p class="Contact Email">Email Id: <a class="Email Id" href = "mailto: im.aadityaarya@gmail.com">im.aadityaarya@gmail.com</a></p>
-            <p class="Contact Number">Contact Number: <a class="Phone Number" href="tel:769-204-1073">7692041073</a></p>
-            <p class="Contact LinkedIn ID">LinkedId: <a class="LinkedIn Id" href="https://www.linkedin.com/in/imaadityaarya">imaadityaarya</a></p>
-        </div>
-    <br>
+
+    <div class="certifications section">
+      <h2>Certifications</h2>
+      <h4><a href="https://www.credential.net/7b5c2848-0bf1-4f07-ae40-6df09d4616fb" target="_blank">Google Cloud Certified Associate Cloud Engineer</a></h4>
+      <p>Qualified to deploy applications, monitor operations, and manage solutions on Google Cloud. Capabilities include setting up cloud environments, planning and configuring solutions, and ensuring operational success.</p>
     </div>
-    <div class="Certification">
-        <div class="Certification Heading"><h1>Certification</h1></div>
-        <div class="">
-            <img src="GoogleLogo.jpg" alt="Google Logo" width="60" height="48">
-        </div>
-        <div class="Certification Name"><h4><a href="https://www.credential.net/7b5c2848-0bf1-4f07-ae40-6df09d4616fb?key=6f9f5d7d32c3917b006071c970304b8bb8bfd69056f30f9e6225623357a5c9dd">Google Cloud Certified Associate Cloud Engineer</a></h4></div>
-        <div class="Certification Description">
-            <p>An Associate Cloud Engineer deploys applications, monitors operations, and manages enterprise solutions. This individual is able to use Google Cloud Console and the command-line interface to perform common platform-based tasks to maintain one or more deployed solutions that leverage Google-managed or self-managed services on Google Cloud.</p>
-            <p>The Associate Cloud Engineer exam assesses your ability to:</p>
-            <ul>
-                <li>Set up a cloud solution environment</li>
-                <li>Plan and configure a cloud solution</li>
-                <li>Deploy and implement a cloud solution</li>
-                <li>Ensure successful operation of a cloud solution</li>
-                <li>Configure access and security</li>
-            </ul>
-            <p>Certification Link <a href="https://www.credential.net/7b5c2848-0bf1-4f07-ae40-6df09d4616fb?key=6f9f5d7d32c3917b006071c970304b8bb8bfd69056f30f9e6225623357a5c9dd">Click here</a> </p>
-        </div>
+
+    <div class="skills section">
+      <h2>Skills</h2>
+      <ul>
+        <li>Data Structures, Database Management System, Algorithm Design</li>
+        <li>Object-Oriented Programming, System Design, Google CCAI</li>
+        <li>Python, JavaScript, C++, HTML, CSS, TypeScript</li>
+        <li>Django, NodeJS, ReactJS</li>
+        <li>MySQL, Firebase, Oracle SQL, Redis</li>
+        <li>Postman, Dialogflow ES/CX, Diagrams.net</li>
+        <li>GIT, GitHub, GitLab</li>
+        <li>Windows, Unix Operating Systems</li>
+      </ul>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  </body>
+  </div>
+
+  <df-messenger
+    project-id="scrapi-development"
+    agent-id="4f45ddf0-ccc3-4e1a-bc4b-733a22c79c1d"
+    language-code="en-us"
+    max-query-length="-1">
+    <df-messenger-chat-bubble
+     chat-title="myProfile">
+    </df-messenger-chat-bubble>
+  </df-messenger>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+
+  <footer>
+    &copy; 2024 Aditya Arya
+  </footer>
+
+</body>
 </html>
